@@ -12,9 +12,14 @@ describe('Automation Exercise', () => {
 
     const senha = '123456';
 
-    function criarConta(usuario) {
+    function iniciarAcessoWeb() {
         cy.visit('https://www.automationexercise.com');
+        cy.xpath('//a[normalize-space(.)="Home"]').should('be.visible');
         cy.xpath('//a[contains(@href, "login")]').click();
+    }
+
+    function criarConta(usuario) {
+        iniciarAcessoWeb();
         cy.xpath('//*[@data-qa="signup-name"]').type(usuario.nome);
         cy.xpath('//*[@data-qa="signup-email"]').type(usuario.email);
         cy.xpath('//*[@data-qa="signup-button"]').click();
@@ -56,8 +61,7 @@ describe('Automation Exercise', () => {
         cy.xpath('//*[@data-qa="continue-button"]').click();
         cy.xpath('//a[@href="/logout"]').click();
 
-        cy.visit('https://www.automationexercise.com');
-        cy.xpath('//a[contains(@href, "login")]').click();
+        iniciarAcessoWeb();
         cy.xpath('//*[@data-qa="login-email"]').type(usuario.email);
         cy.xpath('//*[@data-qa="login-password"]').type(senha);
         cy.xpath('//*[@data-qa="login-button"]').click();
@@ -75,8 +79,7 @@ describe('Automation Exercise', () => {
     it('Test Case 3: Não fazer login com usuário não cadastrado (Teste Negativo)', () => {
         const usuarioNaoCadastrado = gerarDadosUsuario();
 
-        cy.visit('https://www.automationexercise.com');
-        cy.xpath('//a[contains(@href, "login")]').click();
+        iniciarAcessoWeb();
         cy.xpath('//*[@data-qa="login-email"]').type(usuarioNaoCadastrado.email);
         cy.xpath('//*[@data-qa="login-password"]').type('senha-incorreta');
         cy.xpath('//*[@data-qa="login-button"]').click();
@@ -103,8 +106,7 @@ describe('Automation Exercise', () => {
         cy.xpath('//*[@data-qa="continue-button"]').click();
         cy.xpath('//a[@href="/logout"]').click();
 
-        cy.visit('https://www.automationexercise.com');
-        cy.xpath('//a[contains(@href, "login")]').click();
+        iniciarAcessoWeb();
         cy.xpath('//*[@data-qa="signup-name"]').type('Outro Usuario');
         cy.xpath('//*[@data-qa="signup-email"]').type(usuario.email);
         cy.xpath('//*[@data-qa="signup-button"]').click();
