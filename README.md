@@ -29,6 +29,7 @@ npm test
 ```
 
 O comando executa somente `automation-exe-xpath.cy.js`.
+O relatório HTML é gerado em `cypress/reports/` após a execução.
 
 Para executar os cenários de cadastro e login sem XPath:
 
@@ -40,7 +41,8 @@ O arquivo `automation-exe-xpath.cy.js` contém cenários de cadastro e login usa
 
 ## GitHub Actions
 
-O workflow do GitHub Actions executa somente `automation-exe-xpath.cy.js` em pushes e pull requests para `main`. Também pode ser iniciado manualmente pela aba **Actions** do repositório.
+O workflow do GitHub Actions executa somente `automation-exe-xpath.cy.js` em pushes para `main`. Também pode ser iniciado manualmente pela aba **Actions** do repositório.
+O relatório fica disponível para download como artefato da execução na aba **Actions**.
 
 ## Cenários de automação
 
