@@ -11,7 +11,7 @@ Projeto de testes automatizados E2E com Cypress para o site [Automation Exercise
 Na raiz do projeto, instale as dependências:
 
 ```bash
-npm install
+npm ci
 ```
 
 ## Executar os testes
@@ -22,19 +22,25 @@ Abrir o Cypress Test Runner:
 npx cypress open
 ```
 
-Executar os testes no terminal:
+Executar o teste XPath no terminal:
 
 ```bash
-npx cypress run
+npm test
 ```
 
-Para executar somente os cenários de cadastro e login:
+O comando executa somente `automation-exe-xpath.cy.js`.
+
+Para executar os cenários de cadastro e login sem XPath:
 
 ```bash
 npx cypress run --spec "cypress/e2e/1-getting-started/automation-exercise.cy.js"
 ```
 
-O arquivo `automation-exe-xpath.cy.js` contém os mesmos tipos de cenários usando seletores XPath com `cypress-xpath`.
+O arquivo `automation-exe-xpath.cy.js` contém cenários de cadastro e login usando seletores XPath com `cypress-xpath`.
+
+## GitHub Actions
+
+O workflow do GitHub Actions executa somente `automation-exe-xpath.cy.js` em pushes e pull requests para `main`. Também pode ser iniciado manualmente pela aba **Actions** do repositório.
 
 ## Cenários de automação
 
