@@ -11,6 +11,7 @@ module.exports = defineConfig({
     videoOnFailOnly: false,
   },
   e2e: {
+    baseUrl: "https://www.automationexercise.com",
     setupNodeEvents(on, config) {
       require("cypress-mochawesome-reporter/plugin")(on);
       return config;

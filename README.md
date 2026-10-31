@@ -31,12 +31,6 @@ npm test
 O comando executa somente `automation-exe-xpath.cy.js`.
 Após a execução, o relatório HTML em `cypress/reports/index.html` inclui a gravação em vídeo. O arquivo de vídeo também fica em `cypress/reports/videos/`.
 
-Para executar os cenários de cadastro e login sem XPath:
-
-```bash
-npx cypress run --spec "cypress/e2e/1-getting-started/automation-exercise.cy.js"
-```
-
 O arquivo `automation-exe-xpath.cy.js` contém cenários de cadastro e login usando seletores XPath com `cypress-xpath`.
 
 ## GitHub Actions
