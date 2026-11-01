@@ -46,6 +46,11 @@ Os testes em `cypress/e2e/1-getting-started/` cobrem:
 - Login com usuário cadastrado;
 - Tentativa de login com usuário não cadastrado;
 - Logout;
-- Tentativa de cadastro com email já existente.
+- Tentativa de cadastro com email já existente;
+- Listagem de produtos e detalhes do primeiro produto;
+- Busca de produtos e validação dos resultados;
+- Inscrição na página inicial;
+- Finalização de pedido com cadastro prévio do usuário;
+- Finalização de pedido após login com usuário cadastrado.
 
 Os dados de usuário são gerados dinamicamente para evitar reutilizar o mesmo email nos cenários de cadastro.
